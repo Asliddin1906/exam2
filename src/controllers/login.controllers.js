@@ -9,7 +9,7 @@ const LOGIN = async (req, res,next) =>{
   const {username , password } = value
   
   if (error) {
-    return next(new errorHandler(error.message, 400));
+    return next(new errorHandling(error.message, 400));
   }
 
   const admins = await read('admins').catch(error =>
@@ -19,7 +19,7 @@ const LOGIN = async (req, res,next) =>{
 // const admins = read('admins')
 
 
-  const foundAdmin = admins.find(e => e.username == username && e.password == sha256(password))
+  const foundAdmin = admins.find(e => e.username == username && e.password == password)
 
   if(!foundAdmin){
     return next(new errorHandling('username already exist' , 402))

@@ -27,6 +27,9 @@ export const productPost = Joi.object().keys({
 })
 export const productPut = Joi.object().keys({
   sub_category_id: Joi.number().required().max(10),
-  product_name : Joi.string().required()
+  product_name : Joi.string().required(),
+  model :Joi.string() ,
+  color : Joi.string(),
+  price : Joi.number()
 })
 

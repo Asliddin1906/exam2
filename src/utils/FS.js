@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 
 
-// export const read = dir => JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'database', dir + ".json")))
 export const read = (dir) => {
   return new Promise((resolve, reject) => {
     fs.readFile(path.join(process.cwd(), "src", "database", dir + ".json"), 

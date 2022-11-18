@@ -5,7 +5,7 @@ export const verifyAcces = (req,res , next) =>{
 
   if(!access_token){
     return res.status(400).json({
-      message: "not found"
+      message: "token not found"
     })
   }
 
